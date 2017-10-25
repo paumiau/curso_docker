@@ -34,7 +34,7 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 EXPOSE 5432
 
 # Añado un volumen para almacenar las bbdd, los backups y los logs.
-VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
+VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql", "tmp"]
 
 # Comando por defecto que se ejecutará al iniciar el contenedor.
 CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf"]
